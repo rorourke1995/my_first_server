@@ -1,40 +1,38 @@
 package bank
 
 import (
-	
+	"github.com/rorourke1995/my_first_server/bank/checking"
+	"github.com/rorourke1995/my_first_server/bank/savings"
 )
 
-
 type Bank struct {
-//map of people to accounts
+	//map of people to accounts
 	accounts map[string]*Account
-
 }
-
 
 type Account struct {
-	name string
+	name     string
 	password string
-	ch *checking.Checking
-	sv *savings.Savings
-	
-//Savings Account
-//Checking Account
-//extra info
+	ch       *checking.Checking
+	sv       *savings.Savings
+
+	//Savings Account
+	//Checking Account
+	//extra info
 
 }
 
-func NewBank (size int) *Bank{
-	accounts := make(map[string]*Account,size)
-	returnBank := Bank{accounts:accounts}
-	retun &returnBank
-	
+func NewBank(size int) *Bank {
+	accounts := make(map[string]*Account, size)
+	returnBank := Bank{accounts: accounts}
+	return &returnBank
+
 }
 
-func NewAccount (name, password string) *Account{
+func NewAccount(name, password string) *Account {
 	ch := checking.NewChecking()
-    sv := savings.NewSavings()
-	return &Account{name:name,password:password,ch:ch,sv:sv}
+	sv := savings.NewSavings()
+	return &Account{name: name, password: password, ch: ch, sv: sv}
 }
 
 /*
@@ -48,7 +46,7 @@ func deleteBalance(a *Account) {
 func deleteBalance(a Account){
 	a.Savings.money = 0
 	fmt.Println(a.Savings.money)
-	
+
 }
 //after you leave savings is back to what it was...you're just messing with a copy
 */

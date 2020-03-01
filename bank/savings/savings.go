@@ -1,11 +1,11 @@
 package savings
 
-type Savings {
-	money int64
+type Savings struct {
+	money          int64
 	withdrawlCount int //number of times someone has withdrawn
-	
+
 }
 
-func NewSavings() *Savings{
-    return &Savings{}
+func NewSavings() *Savings {
+	return &Savings{}
 }

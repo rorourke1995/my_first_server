@@ -1,11 +1,10 @@
 package checking
 
 type Checking struct {
-	money int64
+	money       int64
 	timesUnder0 int
-	
 }
 
-func NewChecing() *Checking{
+func NewChecking() *Checking {
 	return &Checking{}
 }
